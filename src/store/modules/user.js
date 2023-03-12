@@ -36,7 +36,8 @@ const actions = {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
         commit('SET_TOKEN', data.token)
-        setToken(data.token)
+        // setToken(data.token)
+        // debugger
         resolve()
       }).catch(error => {
         reject(error)
@@ -61,6 +62,8 @@ const actions = {
           reject('getInfo: roles must be a non-null array!')
         }
 
+        var roles_list = []
+        roles_list.push(roles)
         commit('SET_ROLES', roles)
         commit('SET_NAME', name)
         commit('SET_AVATAR', avatar)
