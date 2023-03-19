@@ -170,7 +170,18 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/files',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/files/index'),
+        name: 'Files',
+        meta: { title: 'Files', icon: 'excel', noCache: true }
+      }
+    ]
+  },
   {
     path: '/icon',
     component: Layout,
